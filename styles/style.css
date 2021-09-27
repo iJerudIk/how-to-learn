@@ -1,23 +1,12 @@
-/* я попытался комментировать что-нибудь в проекте 404,
-но мне дали понять, что комментировать я не умею */
+/* Я комментирую те части, которые мне сказал исправить ревьюер */
 
 
-*{
-  box-sizing: border-box;
-  margin: 0;
-}
+/* Сказали не использовать селекторы * $ ^ (убрал *{margin: 0;}) */
 .page {
   min-width: 1100px;
   max-width: 1600px;
   margin: 0 auto;
   font-family: 'Helvetica Neue', Arial, sans-serif;
-}
-
-.background_gray{
-  background-color: #f2f2f2;
-}
-.background_black{
-  background-color: #000000;
 }
 
 
@@ -29,6 +18,7 @@
   min-height: 600px;
   max-height: 756px;
   margin-bottom: 100px;
+  background-color: #f2f2f2;
 }
 
 .logo{
@@ -43,6 +33,7 @@
 
 .header__title{
   width: 720px;
+  margin: 0; /* Сказали указать всем текстам */
   margin-left: 64px;
   font-size: 102px;
   line-height: 96px;
@@ -55,6 +46,7 @@
   bottom: 30px;
   left: 64px;
   width: 388px;
+  margin: 0; /* */
   font-size: 18px;
   line-height: 25px;
   font-weight: normal;
@@ -94,10 +86,9 @@
   width: 80%;
 }
 
-.two-columns__first-column{
-  width: 175px;
-}
 .two-columns__brief{
+  width: 175px; /* Добавил width к заголовку, а не к обёртке */
+  margin: 0; /* */
   font-size: 18px;
   line-height: 1.2;
   font-weight: normal;
@@ -109,6 +100,7 @@
   min-width: 784px;
 }
 .two-columns__paragraph{
+  margin: 0; /* */
   margin-bottom: 30px;
   font-size: 24px;
   line-height: 32px;
@@ -133,6 +125,7 @@
   font-size: 60px;
   line-height: 1.15;
   font-weight: bold;
+  z-index: 1; /* Добавил, т.к. треугольник накладывался на текст */
 }
 .section-subtitle{
   width: 60%;
@@ -140,6 +133,7 @@
   font-size: 24px;
   line-height: 34px;
   font-weight: normal;
+  z-index: 1; /* Добавил, т.к. треугольник накладывался на текст */
 }
 
 .table{
@@ -148,6 +142,8 @@
   flex-wrap: wrap;
   width: 1100px;
   margin: 0 auto;
+  padding: 0;
+  list-style: none;
   text-align: left;
 }
 .table__cell{
@@ -161,11 +157,13 @@
 }
 
 .table__heading{
+  margin: 0; /* */
   font-size: 24px;
   line-height: 1.15;
   font-weight: bold;
 }
 .table__text{
+  margin: 0; /* */
   margin-top: 20px;
   font-size: 18px;
   line-height: 1.2;
@@ -180,7 +178,7 @@
 
 
 .feynman{
-  height: 890px;
+  min-height: 890px; /* Заменил height на min-height */
   position: relative;
   padding-top: 100px;
   text-align: center;
@@ -188,6 +186,7 @@
   background-position: left bottom;
   background-size: 867px 637px;
   background-repeat: no-repeat;
+  background-color: #f2f2f2;
 }
 
 .feynman__title{
@@ -219,6 +218,7 @@
   overflow: hidden;
   text-align: center;
   padding: 90px 0;
+  background-color: #1f1f1f;
 }
 .kaufman__triangle{
   position: absolute;
@@ -226,23 +226,27 @@
   right: -210px;
   width: 877px;
   height: 877px;
+  background-image: url('../images/kaufman-triangle.svg');
+  background-size: cover;
 }
 
 
 .footer{
+  display: flex;
+  justify-content: center;
   min-height: 350px;
   padding: 60px 0 40px;
+  box-sizing: border-box; /* Добавил, т.к. убрал *{box-sizing: border-box} */
+  background-color: #1f1f1f;
 }
 
 .footer__columns{
   display: flex;
   justify-content: space-between;
   width: 90%;
-  min-height: 250px;
-  margin: 0 auto;
 }
 
-.column_content_copyright{
+.footer__column_content_copyright{
   flex-basis: 711px;
   display: flex;
   flex-direction: column;
@@ -259,6 +263,7 @@
 }
 
 .footer__column-heading{
+  margin: 0; /* */
   font-size: 18px;
   line-height: 30px;
   font-weight: bold;
