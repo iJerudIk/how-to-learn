@@ -219,6 +219,7 @@
   text-align: center;
   padding: 90px 0;
   background-color: #1f1f1f;
+  z-index: 1; /* Добавил, т.к. треугольник накладывался на текст (подсказали в слаке) */
 }
 .kaufman__triangle{
   position: absolute;
@@ -228,6 +229,7 @@
   height: 877px;
   background-image: url('../images/kaufman-triangle.svg');
   background-size: cover;
+  z-index: -1; /* Добавил, т.к. треугольник накладывался на текст (подсказали в слаке) */
 }
 
 
